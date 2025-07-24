@@ -1,7 +1,15 @@
-import React from "react";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 export default function App() {
+  const [count, setCount] = useState(0);
+
   return (
     <View style={styles.body}>
       <SafeAreaView style={styles.safeArea}>
@@ -10,8 +18,14 @@ export default function App() {
         </View>
       </SafeAreaView>
       <View style={styles.content}>
-        <Text>محتوای اصلی برنامه</Text>
+        <Text style={styles.counterText}>counter : {count}</Text>
       </View>
+      <TouchableOpacity
+        style={styles.fab}
+        onPress={() => setCount((prev) => prev + 1)}
+      >
+        <Text style={styles.fabIcon}>+</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -33,12 +47,31 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   title: {
-    color: "#ff1f",
+    color: "#ffffff",
     fontSize: 20,
     fontWeight: "bold",
   },
   body: {
     flex: 1,
-    backgroundColor: "#f2ff",
+    backgroundColor: "#f2f2ff",
+  },
+  fab: {
+    position: "absolute",
+    right: 40,
+    bottom: 60,
+    backgroundColor: "#2196F3",
+    width: 64,
+    height: 64,
+    borderRadius: 128,
+    justifyContent: "center",
+    alignItems: "center",
+    elevation: 5,
+  },
+  fabIcon: {
+    fontSize: 32,
+    color: "#fff",
+  },
+  counterText: {
+    fontSize: 26,
   },
 });

@@ -1,0 +1,28 @@
+# Cursor IDE Rules for Loovi Neo Project
+
+## CRITICAL COMMIT MESSAGE RULE
+- ALL commit messages MUST be written ONLY in English
+- NEVER use Persian/Farsi for any commit messages
+- Use conventional commit format: feat:, fix:, chore:, refactor:, docs:, etc.
+- Keep commit messages concise and descriptive
+
+## Language Rules
+- Code: Always use English for variables, functions, comments, file names
+- User responses: Always respond in Persian/Farsi to user
+- Commit messages: ALWAYS English only
+
+## Code Style
+- Use TypeScript for all new files
+- Use functional components with hooks
+- Use NativeWind for styling (no CSS-in-JS)
+- Extract reusable components when appropriate
+
+## Import/Export Validation Rules
+- **CRITICAL**: After ANY file move, rename, delete, or creation operation, ALWAYS validate and update ALL related import/export statements
+- When moving files between directories, update ALL import paths that reference the moved files
+- When renaming components or files, update ALL import statements that use the old names
+- When deleting files, ensure no import statements reference the deleted files
+- When creating new files, ensure proper export statements and update any necessary index files
+- Always check for broken imports after structural changes to prevent runtime errors
+- Use tools like grep or codebase search to find all references before making file system changes
+- Test the application after import/export changes to ensure no compilation errors

@@ -1,0 +1,15 @@
+# Commit message template - ALWAYS write in English
+# Format: <type>: <subject>
+#
+# Types:
+# feat: new feature
+# fix: bug fix
+# refactor: code refactoring
+# chore: maintenance tasks
+# docs: documentation changes
+# style: formatting changes
+# test: adding or updating tests
+#
+# Example: feat: add user authentication
+# Example: fix: resolve login validation issue
+# Example: refactor: update component structure

@@ -6,27 +6,37 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { PostHogProvider } from "posthog-react-native";
 
 export default function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <View style={styles.body}>
-      <SafeAreaView style={styles.safeArea}>
-        <View style={styles.appBar}>
-          <Text style={styles.title}>flutter default app with react</Text>
+    <PostHogProvider
+      apiKey="phc_PsyTMjE7qDJVJXymPwoY7WUoyxxjO0vHAKMd3K4JYju"
+      options={{
+        host: 'https://us.i.posthog.com',
+        enableSessionReplay: true,
+      }}
+      autocapture
+    >
+      <View style={styles.body}>
+        <SafeAreaView style={styles.safeArea}>
+          <View style={styles.appBar}>
+            <Text style={styles.title}>flutter default app with react</Text>
+          </View>
+        </SafeAreaView>
+        <View style={styles.content}>
+          <Text style={styles.counterText}>counter : {count}</Text>
         </View>
-      </SafeAreaView>
-      <View style={styles.content}>
-        <Text style={styles.counterText}>counter : {count}</Text>
+        <TouchableOpacity
+          style={styles.fab}
+          onPress={() => setCount((prev) => prev + 1)}
+        >
+          <Text style={styles.fabIcon}>+</Text>
+        </TouchableOpacity>
       </View>
-      <TouchableOpacity
-        style={styles.fab}
-        onPress={() => setCount((prev) => prev + 1)}
-      >
-        <Text style={styles.fabIcon}>+</Text>
-      </TouchableOpacity>
-    </View>
+    </PostHogProvider>
   );
 }
 

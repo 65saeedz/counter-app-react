@@ -1,0 +1,35 @@
+---
+alwaysApply: true
+---
+
+## Language Rules
+
+- Always respond to user in Persian/Farsi language regardless of user's input language (English or Persian)
+- NEVER use Persian/Farsi characters in code, strings, comments, or any code-related content
+- Use only English for all code elements: variables, functions, comments, strings, error messages, file names
+- Keep all code completely in English for international standards and compatibility
+- **CRITICAL**: ALL commit messages MUST be written ONLY in English language, never in Persian/Farsi. This applies to ALL git operations including automatic commit message generation in Cursor IDE
+- Commit messages should be very concise and follow conventional commit format (feat:, fix:, chore:, etc.)
+- If a question or request is asked in a language other than English, always include the final English-translated version (as understood by the AI) at the beginning of the response, and then proceed to answer it. If possible, it’s better to visually differentiate this part of the text — such as using a different color, font, or style — from the rest of the response.It's very important to me that It should also be separated from the rest of the response with a blue horizontal line made of ------ characters.
+
+## Styling Rules
+
+This project uses nativewind as the styling. Don't use css-in-js or native react styles
+
+## Code Style
+
+- Write precise, appropriate, and readable English comments only when necessary for clarity
+- Use TypeScript for all new files
+- Use functional components with hooks
+- Extract reusable components into separate files when appropriate
+
+## Import/Export Validation Rules
+
+- **CRITICAL**: After ANY file move, rename, delete, or creation operation, ALWAYS validate and update ALL related import/export statements
+- When moving files between directories, update ALL import paths that reference the moved files
+- When renaming components or files, update ALL import statements that use the old names
+- When deleting files, ensure no import statements reference the deleted files
+- When creating new files, ensure proper export statements and update any necessary index files
+- Always check for broken imports after structural changes to prevent runtime errors
+- Use tools like grep or codebase search to find all references before making file system changes
+- Test the application after import/export changes to ensure no compilation errors
